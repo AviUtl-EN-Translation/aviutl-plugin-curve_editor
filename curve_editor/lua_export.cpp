@@ -219,7 +219,7 @@ namespace curve_editor {
 			hwnd_button = ::CreateWindowExA(
 				NULL,
 				"BUTTON",
-				"選択",
+				"Select",
 				WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 				tmp.x + edit_width - BUTTON_WIDTH,
 				tmp.y,

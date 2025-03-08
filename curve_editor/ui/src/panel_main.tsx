@@ -271,8 +271,8 @@ const MainPanel: React.FC<MainPanelProps> = (props: MainPanelProps) => {
                     <select className='dropdown' name='apply-mode' id='apply-mode' value={config.applyMode} onChange={onSelectChange}>
                         {applyModeOptions}
                     </select>
-                        <button className='button-apply' id='button-apply' title={`カーブを適用 (${config.getApplyModeName(config.applyMode)})`} onMouseDown={onApplyButtonMouseDown} onKeyDown={onApplyButtonKeyDown}>
-                        {isDragging? 'トラックバーにドラッグ&ドロップして適用' : '適用'}
+                        <button className='button-apply' id='button-apply' title={`Apply curve (${config.getApplyModeName(config.applyMode)})`} onMouseDown={onApplyButtonMouseDown} onKeyDown={onApplyButtonKeyDown}>
+						{isDragging ? 'Apply by dragging and dropping onto the trackbar' : 'Apply'}
                     </button>
                 </div>
             </div>

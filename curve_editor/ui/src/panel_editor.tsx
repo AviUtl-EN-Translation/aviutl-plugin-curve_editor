@@ -62,7 +62,7 @@ const ParamButton: React.FC<ParamButtonProps> = (props: ParamButtonProps) => {
     }, [props.editMode]);
 
     return (
-        <ToolbarButtonText onClick={onClick} title='カーブのパラメータ' label={getParam() ?? ''} />
+		<ToolbarButtonText onClick={onClick} title='Curve Parameters' label={getParam() ?? ''} />
     );
 }
 
@@ -156,7 +156,7 @@ const IdButtons: React.FC<IdButtonsProps> = (props: IdButtonsProps) => {
             <ToolbarButtonIcon
                 style={{ width: '25%' }}
                 icon={faAngleLeft}
-                title='前のIDに戻る'
+				title='Return to the previous ID'
                 onMouseDown={onBackButtonHoldStart}
                 onMouseUp={onBackButtonHoldEnd}
                 onMouseLeave={onBackButtonHoldEnd}
@@ -164,7 +164,7 @@ const IdButtons: React.FC<IdButtonsProps> = (props: IdButtonsProps) => {
             />
             <ToolbarButtonText
                 style={{ width: '50%' }}
-                title='編集中のID'
+				title='Currently editing ID'
                 label={String(props.idx + 1)}
                 onClick={onIdxButtonClick}
                 onMouseDown={onIdxButtonMouseDown}
@@ -172,7 +172,7 @@ const IdButtons: React.FC<IdButtonsProps> = (props: IdButtonsProps) => {
             <ToolbarButtonIcon
                 style={{ width: '25%' }}
                 icon={isIdxLast(props.idx) ? faPlus : faAngleRight}
-                title={isIdxLast(props.idx) ? 'カーブを新規作成' : '次のIDへ進む'}
+				title={isIdxLast(props.idx) ? 'Create a new curve' : 'Go to the next ID'}
                 onMouseDown={onForwardButtonHoldStart}
                 onMouseUp={onForwardButtonHoldEnd}
                 onMouseLeave={onForwardButtonHoldEnd}

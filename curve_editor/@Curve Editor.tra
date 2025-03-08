@@ -9,7 +9,7 @@ local par=gp"param"
 return ce.getcurve(0,par,t,st,ed) or ce.getcurve(1,par,t,st,ed) or ce.getcurve(2,-par,t,st,ed) or ce.getcurve(5,par-524288,t,st,ed) or gp"default"
 
 
-@Type1(中間点無視)
+@Type1(Ignore Mid-point)
 --twopoint
 --param:0
 local ce=require"curve_editor"
@@ -18,7 +18,7 @@ local par=gp"param"
 return ce.getcurve(0,par,gp"totalindex",gp(0),gp(1)) or ce.getcurve(1,par,gp"totalindex",gp(0),gp(1)) or ce.getcurve(2,-par,gp"totalindex",gp(0),gp(1)) or ce.getcurve(5,par-524288,gp"totalindex",gp(0),gp(1)) or gp"default"
 
 
-@Type1(補間)
+@Type1(Interpolate)
 --param:0
 local ce=require"curve_editor"
 local gp=obj.getpoint
@@ -113,7 +113,7 @@ local par=gp"param"
 return ce.getcurve(3,par,t,st,ed) or ce.getcurve(4,par,t,st,ed) or gp"default"
 
 
-@Type2(中間点無視)
+@Type2(Ignore Mid-point)
 --twopoint
 --param:0
 local ce=require"curve_editor"
@@ -122,7 +122,7 @@ local par=gp"param"
 return ce.getcurve(3,par,gp"totalindex",gp(0),gp(1)) or ce.getcurve(4,par,gp"totalindex",gp(0),gp(1)) or gp"default"
 
 
-@Type2(補間)
+@Type2(Interpolate)
 --param:0
 local ce=require"curve_editor"
 local gp=obj.getpoint

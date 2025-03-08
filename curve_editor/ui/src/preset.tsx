@@ -114,10 +114,10 @@ const PresetPanel: React.FC<PresetProps> = ({ style }) => {
                     <div className='searchbar-icon'>
                         <FontAwesomeIcon icon={faMagnifyingGlass} size='sm'/>
                     </div>
-                    <input type='text' id='searchbar' name='searchbar' autoComplete='off' placeholder='プリセットを検索...' onChange={onSearchbarChange}></input>
+					<input type='text' id='searchbar' name='searchbar' autoComplete='off' placeholder='Search presets...' onChange={onSearchbarChange}></input>
                 </div>
                 <div className='index-buttons'>
-                    <ToolbarButtonIcon icon={faList} title='リストの設定' onClick={() => {
+					<ToolbarButtonIcon icon={faList} title='List settings' onClick={() => {
                         window.chrome.webview.postMessage({
                             command: 'ButtonPresetListSetting'
                         });
@@ -132,7 +132,7 @@ const PresetPanel: React.FC<PresetProps> = ({ style }) => {
                         name='collection'
                         id='collection'
                         value={preset.currentCollectionId}
-                        title={`コレクション (${preset.getCollectionName(preset.currentCollectionId)})`}
+                        title={`Collection (${preset.getCollectionName(preset.currentCollectionId)})`}
                         onChange={onSelectChange}
                     >
                         {collectionInfo.map(({ id, name }: {id: number, name: string}, index: number) => {
@@ -141,12 +141,12 @@ const PresetPanel: React.FC<PresetProps> = ({ style }) => {
                     </select>
                 </div>
                 <div className='collection-buttons'>
-                    <ToolbarButtonIcon icon={faFolderPlus} title='コレクションの作成・追加' onClick={() => {
+					<ToolbarButtonIcon icon={faFolderPlus} title='Create/Add collection' onClick={() => {
                         window.chrome.webview.postMessage({
                             command: 'ButtonCollectionAdd'
                         });
                     }}/>
-                    <ToolbarButtonIcon icon={faPenToSquare} title='コレクションの操作' onClick={() => {
+					<ToolbarButtonIcon icon={faPenToSquare} title='Manage collection' onClick={() => {
                         window.chrome.webview.postMessage({
                             command: 'ButtonCollection'
                         });
@@ -159,7 +159,7 @@ const PresetPanel: React.FC<PresetProps> = ({ style }) => {
                         presetsInfo.map((info: PresetInfo) => (
                             <PresetItem key={info.id} curveId={info.id} collectionId={info.collectionId} name={info.name} date={info.date} width={presetSize} />
                         ))
-                    ) : (<div className='no-presets'>プリセットがありません</div>)
+					) : (<div className='no-presets'>No presets available</div>)
                 }
             </div>
         </div>

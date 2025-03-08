@@ -33,7 +33,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
     const buttonsProps: ToolbarButtonIconProps[] = [
         {
             icon: faClone,
-            title: 'カーブのコード/IDをコピー',
+			title: 'Copy curve code/ID',
             onClick: () => {
                 window.chrome.webview.postMessage({
                     command: 'ButtonCopy'
@@ -42,7 +42,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
         },
         {
             icon: faSquareUpRight,
-            title: 'カーブのコードを読み取り',
+			title: 'Read curve code',
             onClick: () => {
                 window.chrome.webview.postMessage({
                     command: 'ButtonCurveCode'
@@ -54,7 +54,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
         },
         {
             icon: faStar,
-            title: 'プリセットに保存',
+			title: 'Save to presets',
             onClick: () => {
                 window.chrome.webview.postMessage({
                     command: 'ButtonSave'
@@ -63,7 +63,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
         },
         {
             icon: editor.isCurveLocked(props.curveId)? faLock : faLockOpen,
-            title: editor.isCurveLocked(props.curveId) ? 'カーブの編集はロックされています' : 'カーブは編集可能です',
+			title: editor.isCurveLocked(props.curveId) ? 'Curve editing is locked' : 'Curve is editable',
             onClick: () => {
                 setIsLocked(!editor.isCurveLocked(props.curveId));
                 editor.setIsCurveLocked(editor.currentCurveId, !editor.isCurveLocked(props.curveId));
@@ -74,7 +74,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
         },
         {
             icon: faTrash,
-            title: 'カーブを削除',
+			title: 'Delete curve',
             onClick: () => {
                 window.chrome.webview.postMessage({
                     command: 'ButtonClear'
@@ -84,7 +84,7 @@ const Toolbar: React.FC<ToolbarProps> = (props: ToolbarProps) => {
         },
         {
             icon: faEllipsisVertical,
-            title: 'その他',
+			title: 'Others',
             onMouseDown: (event: React.MouseEvent) => {
                 if (event.button === 0) {
                     window.chrome.webview.postMessage({
