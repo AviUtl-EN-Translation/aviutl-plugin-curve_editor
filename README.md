@@ -35,8 +35,8 @@ Unzip the downloaded ZIP file and place the following contents in the appropriat
 > [!NOTE]
 > If it is not working properly, please make sure that the programs below are installed on your computer.
 >
-> - [Visual C++ 2015/2017/2019/2022 再頒布可能パッケージ (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
-> - [Microsoft Edge WebView2 ランタイム (x86)](https://developer.microsoft.com/ja-jp/microsoft-edge/webview2/?form=MA13LH)
+> - [Visual C++ 2015/2017/2019/2022 Redistributable version (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+> - [Microsoft Edge WebView2 Runtime (x86)](https://developer.microsoft.com/ja-jp/microsoft-edge/webview2/?form=MA13LH)
 
 ## How to use
 
