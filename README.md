@@ -9,117 +9,118 @@
 
 ![thumbnail](https://github.com/user-attachments/assets/fa8243c9-3b7b-4b86-aa59-c266e6101fb7)
 
-様々なイージングを作成・管理することができる AviUtl のプラグイン・スクリプトです。
+This is AviUtl's plugin and script that allows you to create and manage various easing.
 
-## ダウンロード
+## Download
 
-下のリンクから最新バージョンの ZIP ファイル(`curve_editor-v*.zip`)をダウンロードしてください。  
-[**ダウンロード**](https://github.com/mimaraka/aviutl-plugin-curve_editor/releases/latest)
+Please download the latest version of the ZIP file ('curve_editor-v*.zip') from the link below.
 
-## インストール
+[**Download**](https://github.com/mimaraka/aviutl-plugin-curve_editor/releases/latest)
 
-ダウンロードしたZIPファイルを展開し、以下の内容物をそれぞれ適切な場所に配置します。
+## Install
 
-|                     内容物                     |                                                                 移動先                                                                  |
+Unzip the downloaded ZIP file and place the following contents in the appropriate location.
+
+|                     Content                     |                                                                 Move to                                                                  |
 | :--------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
-| `curve_editor.auf`<br>`curve_editor`(フォルダ) | AviUtl のディレクトリ直下 / `plugins`フォルダ / `plugins`フォルダの 1 階層下のフォルダ<br>のいずれか (両者は同じ場所に配置してください) |
-|              `@Curve Editor.tra`               |                                              `script`フォルダまたはその 1 階層下のフォルダ                                              |
-|               `curve_editor.lua`               |                                                       `exedit.auf`があるフォルダ                                                        |
+| `curve_editor.auf`<br>`curve_editor`(folder) | directly under the AviUtl directory / `Plugins` folder / subfolder of `Plugins` (both should be placed in the same location).
+|              `@Curve Editor.tra`               |                                             Inside the `script` folder or a subfolder within it.                                              |
+|               `curve_editor.lua`               |                                                       Inside the folder where `exedit.auf` is located.                                                   |
 
 ![installation](https://github.com/user-attachments/assets/8edff440-b22f-45fc-a930-cac3285cd805)
 
 > [!NOTE]
-> 更新の際は、すべてのファイル・フォルダを上書きして配置してください。
+> When updating, please overwrite and place all files and folders.
 
 > [!NOTE]
-> 正常に動作しない場合は、以下のプログラムがコンピュータにインストールされているか確認してください。
+> If it is not working properly, please make sure that the programs below are installed on your computer.
 >
 > - [Visual C++ 2015/2017/2019/2022 再頒布可能パッケージ (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
 > - [Microsoft Edge WebView2 ランタイム (x86)](https://developer.microsoft.com/ja-jp/microsoft-edge/webview2/?form=MA13LH)
 
-## 使用方法
+## How to use
 
-AviUtl を起動後、メインウィンドウの「表示」メニューから「Curve Editor の表示」をクリックすると、Curve Editor のウィンドウが表示されます。 ([→ ウィンドウが表示されない場合](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0))
+After starting AviUtl, click "Curve Editor" on the "Window" menu in the main window, and the Curve Editor window appears. ([→ If the window does not appear](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0))
 
-このプラグインでは、以下の 5 つの編集モードでカーブを編集することができます。
+This plugin allows you to edit curves in the following five editing modes.
 
-- **標準** (旧: ベジェ(複数))
-- **ベジェ**
-- **振動**
-- **バウンス**
-- **スクリプト**
+- **Normal** (former: Bezier(Multiple))
+- **Bezier**
+- **Elastic**
+- **Bounce**
+- **Script**
 
-ウィンドウ左上のモード選択ドロップダウンから、これらのモードを切り替えることができます。
+You can switch between these modes from the mode selection dropdown in the top left corner of the window.
 
-- #### 標準 (旧: ベジェ(複数))
+- #### Normal (former: Bezier(Multiple))
 
-  `1`~`524288` までの ID を使って、最大 524288 個のカーブをプロジェクトファイルに保存できます。
+  You can save up to 524288 curves to a project file using IDs from `1` to `524288`.
 
-  このモードでは、直線・ベジェ・振動・バウンスの 4 種類のカーブを自由に組み合わせてカーブを作成することができます。  
-  グラフ上の何もないところをダブルクリックするとアンカーが追加されます。
-  カーブを削除するときは、アンカーをダブルクリックします。
+  In this mode, you can create a curve by freely combining four types of curves: Linear, Bezier, Elastic, and Bounce.
+  Double-click on the empty part of the graph to add an anchor.
+  Double-click the anchor to delete the curve.
   
-  アンカー上で右クリックをすることで、区間ごとのカーブの種類を変更したり、区間ごとに異なるモディファイアを設定したりすることができます。
+  Right-click on the anchor to change the curve type for each section or to set different modifiers for each section.
 
-- #### ベジェ
+- #### Bezier
 
-  単一の 3 次ベジェ曲線を作成することができるモードです。  
-  カーブを数桁の整数値で識別しており、値とカーブが 1 対 1 で対応しています。
+  A mode that allows you to create a single third-order bezier curve.
+  The curve is identified by an integer value of several digits, and the value and curve correspond to one-to-one.
 
-- #### 振動
+- #### Elastic
 
-  ゴムの振動のような動きを作成できるモードです。  
-  ベジェモードと同様に、カーブを整数によって識別します。負の値にするとカーブが反転します。
+  A mode that allows you to create a movement such as rubber vibrations.
+  Identifies curves by integers, similar to Bezier mode. Negative values will reverse the curve.
 
-- #### バウンス
+- #### Bounce
 
-  物体がバウンドする動きを作成できるモードです。  
-  ベジェモードと同様に、カーブを整数によって識別します。負の値にするとカーブが反転します。
+  A mode that allows you to create a movement in which objects bounce.
+  Identifies curves by integers, similar to Bezier mode. Negative values will reverse the curve.
 
-- #### スクリプト
+- #### Script
 
-  Lua スクリプトにより、イージングの関数を直接記述することができるモードです。  
-  標準モードと同様に、最大 524288 個のカーブを追加できます。
+  A mode that allows you to describe the function of easing directly through a Lua script.
+  Like the Normal mode, you can add up to 524288 curves.
 
-### グラフビュー
+### Graph View
 
-マウスホイールを回転させて、ビューを拡大縮小することができます。
+You can zoom in and out of the view by rotating the mouse wheel.
 
-マウスホイールをドラッグする、または、 `Alt` キーを押しながら左ボタンでドラッグすることで、ビューの位置を変更することができます。
+You can change the view position by dragging the mouse wheel or dragging the left button while pressing the `Alt` key.
 
-### ドラッグ&ドロップ
+### Drag & Drop
 
-「適用」ボタンを押すと、ボタンが「トラックバーにドラッグ&ドロップして適用」という表示に変化します。  
-そのままマウスの左ボタンを離さずに、トラックバーの移動方法変更ボタンまでドラッグします。
+When the 「Apply」 button is pressed, the button changes to the 「Apply by dragging and dropping onto the trackbar」. 
+Drag the trackbar to the trackbar Movement Change Button without letting go of the left mouse button as it is.
 
-カーソルが移動方法変更ボタンにホバーすると、ボタンがハイライト表示されます。  
-カーブを適用したいトラックバーの上でドロップすると、カーブが適用されます。
+When the cursor hover over the Movement Change Button of trackbar , the button is highlighted.
+If you drop the curve over the track bar you want to apply it, the curve is applied.
 
-[→ ドラッグ&ドロップができない場合](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
+[→ Drag & Drop is not working](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
 
 > [!TIP]
-> Shift キーを押しながらドラッグ&ドロップすることで、XYZ 座標など、イージングが一度に設定されるトラックバーについても、各座標ごとに個別にイージングを設定することができます。
+> By dragging and dropping with the Shift key, you can set the easing individually for each coordinate even for the track bar where the easing, such as the XYZ coordinates, is set at once.
 
-## その他
+## Other
 
-詳細な使用方法やよくある問題の解決方法については、 [Wiki](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki) を参照してください。
+See [Wiki](https://github.com/mimaraka/aviutl-plugin-curve_editor/wiki) for more information on how to use it or work around common problems.
 
-## 動作環境
+## Operating Environment
 
-|      OS      | AviUtl | 拡張編集 |
+|      OS      | AviUtl | Advanced edit |
 | :----------: | :----: | :------: |
 | Windows 7~11 |  1.10  |   0.92   |
 
 > [!IMPORTANT]
-> 以下のプログラムのインストールが必要です。
+> Installation of the following programs is required.
 >
-> - [Visual C++ 2015/2017/2019/2022 再頒布可能パッケージ (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
-> - [Microsoft Edge WebView2 ランタイム (x86)](https://developer.microsoft.com/ja-jp/microsoft-edge/webview2/?form=MA13LH)
+> - [Visual C++ 2015/2017/2019/2022 Redistributable version (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+> - [Microsoft Edge WebView2 Runtime (x86)](https://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH)
 
-## バグ報告
+## Bug Report
 
-バグ報告は Issues または [Google Form](https://forms.gle/mhv96DSYVhhKPkYQ8) (匿名回答可)からお願いします。
+I don't know if the bug in english version is a problem in the original version, so I won't write the link to the original bug report
 
-## 免責事項
+## Disclaimer
 
-当プラグイン・スクリプトを使用したことによっていかなる損害が生じても、製作者は一切の責任を負わないものとします。
+he manufacturer is not responsible for any damages caused by the use of such a plugin and a script.
